@@ -1,0 +1,122 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+  		<meta charset="utf-8">
+
+  		<title>Animadeus</title>
+
+  		<link rel="icon" href="../assets/animadeus-favicon.ico" type="image/x-icon">
+
+		<!--Style Sheets-->
+  		<link rel="stylesheet" href="../css/reset.css">
+  		<link rel="stylesheet" href="../css/global.css">
+
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  		
+  		<!--Font Upload -->
+  		<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+  		<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body>
+
+		<div id="backdrop" style="background-image: url({user-backdrop});
+	background-color: #fff;">
+			<div id="foreground" class="created_keyframe" class="user-fg-sizing" style="background: url({user-foreground1}), url({user-foreground2});">
+    		</div>
+		</div>
+		<a href="../index.html">
+			<img id="logo" src="../assets/animadeus-logo.png">
+		</a>
+
+    <!--Signup and Login Buttons-->
+      <div id="userarea">
+        
+        <div id="signuplogin">
+          <div id="signup"><p class="signup">Sign Up</p></div>
+          <div id="login"><p class="signup">Login</p></div>
+          <div id="signupform">
+            <form id="signup-form">
+              
+              <input class="signup-inputs" id="signupusername" name="signupusername" type="text" placeholder="Username" />
+              
+              <input class="signup-inputs" id="signuppassword" name="signuppassword" type="password" placeholder="Password" />
+              
+              <input class="signup-inputs" id="signuppassword-confirm" name="signuppassword-confirm" type="password" placeholder="Confirm Password">
+            </form>
+            <button id="signupbutton">Sign Up</button>
+            
+            <div class="error" id="signuperror">
+            </div>
+          </div>
+
+          
+          <div id="loginform">
+            <form id="login-form">
+              <input class="login-inputs" placeholder="Username" id="loginusername" name="loginusername" type="text" />
+              <br />
+              <input class="login-inputs" placeholder="Password" id="loginpassword" name="loginpassword" type="password" />
+            </form>
+            <button id='loginbutton'>Login</button>
+
+            <div class="error" id="loginerror">
+            </div>
+          </div>
+
+          
+
+        </div>
+
+
+
+        <div id="userloggedin">
+          <div id="welcometext"></div>
+          <button id="logoutbutton">Logout</button>
+          <div class="error" id='logouterror'></div>
+        </div>
+      </div>
+
+
+
+        <div id="temp-main-container">
+            <h1 id="temp-slogan">{optional-text}</h1> 
+        </div>
+
+            <div id="change-speed">
+                <h3 class="change-head">Animation Speed</h3>
+                <div id="slow" class="change-icons"><img src="../assets/icons/slow.png"></div>
+                <div id="med" class="change-icons"><img src="../assets/icons/med.png"></div>
+                <div id="fast" class="change-icons"><img src="../assets/icons/fast.png"></div>
+            </div>
+
+            <div id="change-direction">
+                <h3 class="change-head">Animation Direction</h3>
+                <div id="up" class="change-icons"><img src="../assets/icons/up.png"></div>
+                <div id="down" class="change-icons"><img src="../assets/icons/down.png"></div>
+                <div id="diag" class="change-icons"><img src="../assets/icons/diag.png"></div>
+            </div>       
+
+        <div id="savebutton">
+          <form id="hiddenform" action="../php/da_save.php" method="post">
+            <input type="hidden" name="bgurl" id="bgurl" />
+            <input type="hidden" name="fgurl" id="fgurl" />
+            <input type="hidden" name="opt-text" id="opt-text" />
+            <input id="savingbutton" name="save" type="submit" value="SAVE" />
+          </form>
+        </div>
+
+        <div id="sharearea">
+            <span> Copy and Paste URL to Share <img id="x" src="../assets/exit.gif"></span>
+        </div>
+
+
+
+
+    		
+	</body>
+<script src="../js/scripts.js"></script>
+<script src="../js/template-login.js"></script>
+<script src="../js/save.js"></script>
+
+</html>

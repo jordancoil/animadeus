@@ -1,0 +1,180 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+  		<meta charset="utf-8">
+
+  		<title>Animadeus</title>
+
+  		<link rel="icon" href="assets/animadeus-favicon.ico" type="image/x-icon">
+
+		<!--Style Sheets-->
+  		<link rel="stylesheet" href="css/reset.css">
+  		<link rel="stylesheet" href="css/global.css">
+
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  		
+  		<!--Font Upload -->
+  		<link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+  		<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,900,700' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body>
+<!--		<div id="error-overlay">
+			<div id="error-message">
+				
+			</div>
+		</div>-->
+		<div id="backdrop" class="backdrop_snow">
+			<div id="foreground" class="foreground_snow">
+    		</div>
+		</div>
+
+			<!--Logo-->
+			<a href="index.html">
+				<img id="logo" src="assets/animadeus-logo.png">
+			</a>
+
+			<!--Signup and Login Buttons-->
+			<div id="userarea">
+				
+				<div id="signuplogin">
+					<div id="signup"><p class="signup">Sign Up</p></div>
+					<div id="login"><p class="signup">Login</p></div>
+					<div id="signupform">
+						<form id="signup-form">
+							
+							<input class="signup-inputs" id="signupusername" name="signupusername" type="text" placeholder="Username" />
+							
+							<input class="signup-inputs" id="signuppassword" name="signuppassword" type="password" placeholder="Password" />
+							
+							<input class="signup-inputs" id="signuppassword-confirm" name="signuppassword-confirm" type="password" placeholder="Confirm Password">
+						</form>
+						<button id="signupbutton">Sign Up</button>
+						
+						<div class="error" id="signuperror">
+						</div>
+					</div>
+
+					
+					<div id="loginform">
+						<form id="login-form">
+							<input class="login-inputs" placeholder="Username" id="loginusername" name="loginusername" type="text" />
+							<br />
+							<input class="login-inputs" placeholder="Password" id="loginpassword" name="loginpassword" type="password" />
+						</form>
+						<button id='loginbutton'>Login</button>
+
+						<div class="error" id="loginerror">
+						</div>
+					</div>
+
+					
+
+				</div>
+
+
+
+				<div id="userloggedin">
+					<div id="welcometext"></div>
+					<button id="logoutbutton">Logout</button>
+					<div class="error" id='logouterror'></div>
+				</div>
+			</div>
+
+			<!--Center Area-->
+			<div id="main-container">
+				<div id="header-container">
+					<h1 id="slogan">
+						<span id="top-line">Create &amp; Share</span>
+						<br> 
+						your own custom animations
+					</h1> 
+				</div>
+				<div id="creation-container" class="error-space">
+					<form action="php/da_upload.php" method="post" enctype="multipart/form-data" id="submission-form">
+						<br>
+                        <p id="bg-help" class="help-text">Step 1: Choose a preset background or upload your own</p>
+						<div id="background-area">
+							<select id="preset-background" name="pre_file">
+                                <option value="none">Background</option>
+                                <option value="one">Underwater</option>
+								<option value="two">Cosmic</option>
+								<option value="three">Forest</option>
+								<option value="four">Mountain</option>
+								<option value="five">Fall Pond</option>
+                                
+						    </select>
+						    <p class="filebg">
+                                or
+    							<input type="file" name="file" id="upload-background" />
+    							<label id="fileLabel" for="file">Upload</label>
+  							</p>
+						</div>
+						<br>
+                        <p id="bg-help2" class="help-text">Step 2: Choose preset falling objects or upload your own</p>
+						<div id="foreground-area">
+							<select id="preset-foreground" name="pre_file2">
+								<option value="none">Falling Objects 1</option>
+								<option value="one">Bubbles</option>
+								<option value="two">Stars</option>
+								<option value="three">Rain</option>
+								<option value="four">Snow</option>
+								<option value="five">Leaves</option>
+						    </select>
+						    <p class="filefg1">
+                            or
+							<input type="file" name="file2" id="upload-foreground"/>
+							<label id="file2Label" for="file2">Upload</label>
+							</p>
+						</div>
+                        <p id="bg-help3" class="help-text">Step 3: Choose preset falling objects or upload your own</p>
+						<div id="foreground-area">
+							<select id="preset-foreground2" name="pre_file3">
+								<option value="none">Falling Objects 2</option>
+								<option value="one">Bubbles</option>
+								<option value="two">Satellite</option>
+								<option value="three">Rain</option>
+								<option value="four">Snow</option>
+								<option value="five">Leaves</option>
+						    </select>
+						    <p class="file">
+                            or
+							<input type="file" name="file3" id="upload-foreground2"/>
+							<label id="file3Label" for="file3">Upload</label>
+							</p>
+						</div>
+						<br>
+						<input placeholder="Write in some optional text here" type="text" name="upload-text" id="upload-text" maxlength="80">
+						<br>
+						<input src="assets/green_create_button.gif" type="image" id="create">
+						<p id="error-message"></p>
+					</form>
+				</div>
+
+			</div>
+
+			<!--Preset Images-->
+			<div id="preset-container">
+				<div class="presets" id="preset-snow"></div>				
+				<div class="presets" id="preset-ocean" src=""></div>
+				<div class="presets" id="preset-leaves" src=""></div>
+				<div class="presets" id="preset-rain" src=""></div>
+				<div class="presets" id="preset-stars" src=""></div>
+			</div>
+			
+
+			<!--Foreground Div-->
+    		<audio id="jahn">
+    			<source src="john/john.mp3" type="audio/mp3">
+    		</audio>
+		
+			<audio id="pizzaSong">
+    			<source src="pizza/pizzasong.mp3" type="audio/mp3">
+    		</audio>
+		
+	</body>
+<script src="js/scripts.js"></script>
+<script src="js/login.js"></script>
+
+</html>
